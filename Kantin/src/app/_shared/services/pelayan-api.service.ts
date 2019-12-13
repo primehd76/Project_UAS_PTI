@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Kantin, KantinDetail } from '../models/Kantin';
+import { LoginComponent } from 'src/app/login/login.component';
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +22,8 @@ export class PelayanApiService {
   getKantinById(id: string): Observable<KantinDetail>{
     return this.http.get<KantinDetail>(`${this.urlAPI}/api/kantin/${id}`);
   }
+
+  
+
+ 
 }

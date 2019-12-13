@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from 'src/app/login/login.component';
+import { User } from '../../models/user';
+import { ChangeFlagService } from '../../services/change-flag.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public Flag_login: User;
+  public flagss: string;
+
+  constructor(
+    public bendera: ChangeFlagService
+  ) { }
 
   ngOnInit() {
+    this.flagss = (this.bendera.login_flag.value).toString();
+    console.log(this.flagss);
   }
 
 }
