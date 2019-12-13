@@ -10,7 +10,6 @@ import { ChangeFlagService } from '../../services/change-flag.service';
 })
 export class HeaderComponent implements OnInit {
 
-  public Flag_login: User;
   public flagss: string;
 
   constructor(

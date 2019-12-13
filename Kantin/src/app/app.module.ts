@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { from } from 'rxjs';
 import { LoginComponent } from './login/login.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { ShowprofileComponent } from './showprofile/showprofile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LoginComponent } from './login/login.component';
     HeaderComponent,
     FooterComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    EditprofileComponent,
+    ShowprofileComponent
   ],
   imports: [
     BrowserModule,

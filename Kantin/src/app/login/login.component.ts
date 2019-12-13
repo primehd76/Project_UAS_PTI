@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   public login_flag: User;
   flagsss: string;
 
+
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -40,8 +41,9 @@ export class LoginComponent implements OnInit {
       (response) => {
         if(response['token'] != null){
           localStorage.setItem('uas-pti-token', response['token']);
+          console.log(localStorage);
           this.flagsss = '0';
-          this.flags.changeFlag(this.flagsss);
+          this.flags.changeFlag(this.flagsss, this.username);
           console.log(this.flagsss);
 
           this.router.navigate(['home']);

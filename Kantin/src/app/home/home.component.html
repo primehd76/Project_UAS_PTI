@@ -1,5 +1,6 @@
 <div class="container pt-3 pb-2" >
-    <h1 style="padding:25px;" class="text-center">Selamat Datang Di Kantin UMN !</h1>
+    <h1 style="padding:25px;" class="text-center" *ngIf = "bendera.login_flag.value == 1">Selamat Datang Di Kantin UMN !</h1>
+    <h1 style="padding:25px;" class="text-center" *ngIf = "bendera.login_flag.value == 0">Selamat Datang Di Kantin UMN, {{username}} !</h1>
     <hr size="10" style="border-top: 2px solid rgba(1,1,1,1);">
     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">

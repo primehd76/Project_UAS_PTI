@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { SHA512 } from 'crypto-js';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -26,10 +25,10 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(localStorage);
   }
-
   register(){
-    this.http.post('https://umn-pti2019.herokuapp.com/api/register', {
+    this.http.post('https://umn-pti2019.herokuapp.com/api/register',{
       "user_name": this.username,
       "telepon": this.telepon,
       "email": this.email,
@@ -38,18 +37,19 @@ export class RegisterComponent implements OnInit {
       "tanggal_lahir": this.tanggal_lahir,
       "foto": this.foto,
       "password": SHA512(this.password).toString()
-    }, {
-        headers: {
-          "Content-Type": "application/json"
-        }
+    },{
+      headers:{
+        "Content-Type": "application/json"
+      }
     }).subscribe(
       (response) => {
         if(response['token'] != null){
           localStorage.setItem('uas-pti-token', response['token']);
+          console.log(localStorage);
           this.router.navigate(['home']);
         }
       },
-      (error) => alert(error.error.info)
-    )
+      (error) => alert(error.error.message)
+      )
   }
 }

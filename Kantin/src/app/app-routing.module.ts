@@ -5,6 +5,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { ShowprofileComponent } from './showprofile/showprofile.component';
 
 
 const routes: Routes = [
@@ -28,6 +30,14 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'editprofile',
+    component: EditprofileComponent,
+  },
+  {
+    path: 'showprofile',
+    component: ShowprofileComponent,
   }
 ];
 
