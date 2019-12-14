@@ -1,12 +1,13 @@
 <div class="container pt-3 pb-2">
-    <h3 class="text-center" style="padding: 20px;">DAFTAR MENU</h3>
-    <div class="card-columns">
-        <div class="col mb-4" *ngFor="let kantin of kantin.result.kantin" routerLink="./{{kantin.kode}}"> 
+    <h3 class="text-center" style="padding: 20px;">DAFTAR KANTIN</h3>
+    <button routerLink="/addkantin" routerLinkActive="active" class="btn btn-outline-primary" type="submit" style="margin-left: 500px;" *ngIf = "bendera.login_flag.value == 0">+ Kantin</button> <br><br>
+    <div class="card-columns ">
+        <div class="col mb-4" *ngFor="let kantin of kantin.result.kantin;let i = index" [ngClass]="{'image': selectedIdx == i }" routerLink="./{{kantin.kode}}"> 
             <div class="card">
-                <img src="{{kantin.foto}}" class="card-img-top" style="width: 100%;">
+                <img (mouseenter)="selectItem(i)" src="{{kantin.foto}}" class="card-img-top img-fluid" style="width: 100%" alt="smaple image" >  
                 <div class="card-body">
-                    <h5 class="card-title">{{kantin.nama}}</h5>
-                    <p class="card-text">{{kantin.kategori}}</p>
+                     <h5 class="card-title">{{kantin.nama}}</h5>
+                     <p class="card-text">{{kantin.kategori}}</p>
                 </div>
             </div>
         </div>

@@ -14,6 +14,7 @@ import { from } from 'rxjs';
 import { LoginComponent } from './login/login.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ShowprofileComponent } from './showprofile/showprofile.component';
+import { AddkantinComponent } from './addkantin/addkantin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ShowprofileComponent } from './showprofile/showprofile.component';
     RegisterComponent,
     LoginComponent,
     EditprofileComponent,
-    ShowprofileComponent
+    ShowprofileComponent,
+    AddkantinComponent
   ],
   imports: [
     BrowserModule,

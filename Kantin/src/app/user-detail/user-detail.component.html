@@ -1,3 +1,4 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <div class="container pt-3 pb-2">
     
     <div class="card-group text-center" >
@@ -9,8 +10,45 @@
             <div class="card-body">
                 <h5 class="card-title">{{kantin.result.nama}}</h5>
                 <h6 class="card-text">{{kantin.result.kategori}}</h6>
+                <h6 class="card-text">{{kantin.result.harga}}</h6>
                 <p class="card-text">{{kantin.result.deskripsi}}</p>
+                <div class="row row-cols-2">
+                        <div class="col">
+                            <label>
+                                <i class="glyphicon glyphicon-ok" *ngIf = "kantin.result.cash == 'TRUE'"></i>
+                                <i class="glyphicon glyphicon-remove" *ngIf = "kantin.result.cash == 'FALSE'"></i>
+                                <span>Cash</span>
+                            </label>
+                        </div>
+                        <div class="col"><label>
+                                <i class="glyphicon glyphicon-ok" *ngIf = "kantin.result.gopay == 'TRUE'"></i>
+                                <i class="glyphicon glyphicon-remove" *ngIf = "kantin.result.gopay == 'FALSE'"></i>
+                                <span>Gopay</span>
+                            </label>
+                        </div>
+                        <div class="col"><label>
+                                <i class="glyphicon glyphicon-ok" *ngIf = "kantin.result.ovo == 'TRUE'"></i>
+                                <i class="glyphicon glyphicon-remove" *ngIf = "kantin.result.ovo == 'FALSE'"></i>
+                                <span>OVO</span>
+                            </label>
+                        </div>
+                        <div class="col"><label>
+                                <i class="glyphicon glyphicon-ok" *ngIf = "kantin.result.dana == 'TRUE'"></i>
+                                <i class="glyphicon glyphicon-remove" *ngIf = "kantin.result.dana == 'FALSE'"></i>
+                                <span>Dana</span>
+                            </label>
+                        </div>
+                      </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <label for="id-of-input" class="custom-checkbox">
+                    <i class="glyphicon glyphicon-star"></i>
+                    <span>Favourite</span>
+                </label>
             </div>
+            
             <!-- <div class="card-footer">
                 <small class="text-muted">{{kantin.result.cash}}</small>
                 <small class="text-muted">{{kantin.result.gopay}}</small>

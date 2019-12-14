@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ShowprofileComponent } from './showprofile/showprofile.component';
+import { AddkantinComponent } from './addkantin/addkantin.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'showprofile',
     component: ShowprofileComponent,
+  },
+  {
+    path: 'addkantin',
+    component: AddkantinComponent,
   }
 ];
 
