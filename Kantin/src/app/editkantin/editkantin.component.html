@@ -1,1 +1,59 @@
-<p>editkantin works!</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+<div class="container">
+    <form class="form-group col-md-6">
+        <div class="col-md-6">
+            <label>Nama</label>
+            <div class="form-group"></div>
+            <input type="text" id="Username" placeholder="Nama Kantin" class="form-control" name="nama" [(ngModel)]="nama" autofocus>
+        </div>
+        <div class="form-group col-md-6">
+            <div class="col-md">
+            <label>Kategori</label>
+            <div class="form-group col-md"></div>
+            <input type="text" id="Telepon" placeholder="Kategori" class="form-control" name="kategori" [(ngModel)]="kategori" autofocus>
+        </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Foto</label>
+            <div class="col-md"></div>
+            <input type="text" id="Email" placeholder="Foto" class="form-control" name="foto" [(ngModel)]="foto" autofocus>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Deskripsi</label>
+            <div class="col-md"></div>
+            <input type="text" id="Nama Lengkap" placeholder="Deskripsi" class="form-control" name="deskripsi" [(ngModel)]="deskripsi" autofocus>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Harga</label>
+            <div class="col-md"></div>
+            <input type="number" placeholder="Harga" class="form-control" name="harga" [(ngModel)]="harga">
+        </div>
+        <div>
+            <label>Cash</label>
+            <input type="radio" name="cash" value="TRUE" [(ngModel)]="cash"> Tersedia <br>
+            <input type="radio" name="cash" value="FALSE" [(ngModel)]="cash"> Tidak Tersedia <br>
+        </div>
+        <div>
+            <label>Gopay</label>
+            <input type="radio" name="gopay" value="TRUE" [(ngModel)]="gopay"> Tersedia <br>
+            <input type="radio" name="gopay" value="FALSE" [(ngModel)]="gopay"> Tidak Tersedia <br>
+        </div>
+        <div>
+            <label>Ovo</label>
+            <input type="radio" name="ovo" value="TRUE" [(ngModel)]="ovo"> Tersedia <br>
+            <input type="radio" name="ovo" value="FALSE" [(ngModel)]="ovo"> Tidak Tersedia <br>
+        </div>
+        <div>
+            <label>Dana</label>
+            <input type="radio" name="dana" value="TRUE" [(ngModel)]="dana"> Tersedia <br>
+            <input type="radio" name="dana" value="FALSE" [(ngModel)]="dana"> Tidak Tersedia <br>
+        </div>
+        <input type="submit" value="Update Kantin" (click)="updatekantin()" class="btn btn-primary">
+    </form>
+</div>

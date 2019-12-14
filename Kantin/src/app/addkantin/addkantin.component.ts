@@ -48,10 +48,10 @@ export class AddkantinComponent implements OnInit {
       "foto": this.foto,
       "deskripsi": this.deskripsi,
       "harga": this.harga,
-      "cash": "true",
-      "gopay": "true",
-      "ovo": "true",
-      "dana": "true",
+      "cash": this.cash,
+      "gopay": this.gopay,
+      "ovo": this.ovo,
+      "dana": this.dana,
       "token": localStorage.getItem('uas-pti-token')
     }, {
       headers: {

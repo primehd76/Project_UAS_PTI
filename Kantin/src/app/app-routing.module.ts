@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ShowprofileComponent } from './showprofile/showprofile.component';
 import { AddkantinComponent } from './addkantin/addkantin.component';
+import { EditkantinComponent } from './editkantin/editkantin.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'addkantin',
     component: AddkantinComponent,
+  },
+  {
+    path: 'editkantin',
+    component: EditkantinComponent
   }
 ];
 
