@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ShowprofileComponent } from './showprofile/showprofile.component';
 import { AddkantinComponent } from './addkantin/addkantin.component';
+import { EditkantinComponent } from './editkantin/editkantin.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddkantinComponent } from './addkantin/addkantin.component';
     LoginComponent,
     EditprofileComponent,
     ShowprofileComponent,
-    AddkantinComponent
+    AddkantinComponent,
+    EditkantinComponent
   ],
   imports: [
     BrowserModule,
