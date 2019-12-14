@@ -24,3 +24,11 @@ export interface KantinDetail{
         updated_at: number
     };
 }
+
+export interface KantinFavorite{
+    info: string;
+    result:{
+
+    };
+
+}

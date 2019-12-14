@@ -16,6 +16,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ShowprofileComponent } from './showprofile/showprofile.component';
 import { AddkantinComponent } from './addkantin/addkantin.component';
 import { EditkantinComponent } from './editkantin/editkantin.component';
+import { ShowfavoriteComponent } from './showfavorite/showfavorite.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EditkantinComponent } from './editkantin/editkantin.component';
     EditprofileComponent,
     ShowprofileComponent,
     AddkantinComponent,
-    EditkantinComponent
+    EditkantinComponent,
+    ShowfavoriteComponent
   ],
   imports: [
     BrowserModule,

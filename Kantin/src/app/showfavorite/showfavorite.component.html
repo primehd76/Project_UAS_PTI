@@ -1,0 +1,13 @@
+<div class="container pt-3 pb-2">
+    <h3 class="text-center" style="padding: 20px;">DAFTAR KANTIN FAVORIT</h3>
+    <div class="card-columns ">
+        <div class="col mb-4" *ngFor="let kantinFav of kantinFav.result;let i = index" [ngClass]="{'image': selectedIdx == i }" routerLink="../menu/{{kantinFav.id_kode_nim_isbn_favorited}}"> 
+            <div class="card" (mouseenter)="selectItem(i)">
+                <div class="card-body">
+                    <h5 class="card-title">{{kantinFav.user_name}}</h5>
+                    <h5 class="card-title">{{kantinFav.id_kode_nim_isbn_favorited}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

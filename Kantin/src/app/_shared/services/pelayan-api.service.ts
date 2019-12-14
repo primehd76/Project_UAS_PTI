@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Kantin, KantinDetail } from '../models/Kantin';
+import { Kantin, KantinDetail, KantinFavorite } from '../models/Kantin';
 import { LoginComponent } from 'src/app/login/login.component';
 
 @Injectable({
@@ -10,6 +10,7 @@ import { LoginComponent } from 'src/app/login/login.component';
 export class PelayanApiService {
   
   private urlAPI = 'https://umn-pti2019.herokuapp.com';
+  private urlAPIfav = 'http://umn-pti2019.herokuapp.com/api/user/'+localStorage.getItem('user.name')+'/favorites';
 
   constructor(
     private http: HttpClient
@@ -23,7 +24,8 @@ export class PelayanApiService {
     return this.http.get<KantinDetail>(`${this.urlAPI}/api/kantin/${id}`);
   }
 
-  
-
+  getKantinFav(): Observable<KantinFavorite>{
+    return this.http.get<KantinFavorite>(`${this.urlAPIfav}`);
+  }  
  
 }

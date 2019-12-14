@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Kantin, KantinFavorite } from '../_shared/models/Kantin';
 import { PelayanApiService } from '../_shared/services/pelayan-api.service';
-import { Kantin } from '../_shared/models/Kantin';
 import { ChangeFlagService } from '../_shared/services/change-flag.service';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-showfavorite',
+  templateUrl: './showfavorite.component.html',
+  styleUrls: ['./showfavorite.component.css']
 })
-export class UserListComponent implements OnInit {
+export class ShowfavoriteComponent implements OnInit {
 
+  public kantinFav: KantinFavorite = null
   public kantin: Kantin = null;
   public flagss: string;
-
 
   constructor(
     private pelayanApi: PelayanApiService,
@@ -20,6 +20,10 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.pelayanApi.getKantinFav().subscribe(
+      result => { this.kantinFav = result; console.log(this.kantinFav);},
+      error => { console.log(error); }
+    );
     this.flagss = (this.bendera.login_flag.value).toString();
     this.pelayanApi.getAllKantin().subscribe(
       result => { this.kantin = result; console.log(this.kantin);},
@@ -32,5 +36,4 @@ export class UserListComponent implements OnInit {
   selectItem(index):void {
     this.selectedIdx = index;
   }
-
 }

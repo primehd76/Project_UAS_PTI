@@ -43,10 +43,18 @@
                 <br/>
                 <br/>
                 <br/>
+                <button class="btn btn-outline-success" type="submit" style="margin-left: 500px;margin-right: 500px;" *ngIf = "benderas.login_flag.value == 0" (click)="favorite()">
                 <label for="id-of-input" class="custom-checkbox">
                     <i class="glyphicon glyphicon-star"></i>
-                    <span>Favourite</span>
-                </label><br>
+                    <span>Favorite</span>
+                </label>
+                </button>
+                <br><br>
+                <button class="btn btn-outline-danger" type="submit" style="margin-left: 500px;margin-right: 500px;" *ngIf = "benderas.login_flag.value == 0" (click)="unfavorite()">
+                        <span>Unfavorite</span>
+                    </button>
+            <br>
+            <br>
                 <button routerLink="/editkantin" routerLinkActive="active" class="btn btn-outline-primary" type="submit" style="margin-left: 500px;margin-right: 500px;" *ngIf = "benderas.login_flag.value == 0">Edit Kantin</button> <br><br>
             </div>
             
