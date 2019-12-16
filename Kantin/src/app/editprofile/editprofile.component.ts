@@ -48,20 +48,6 @@ export class EditprofileComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.token = localStorage.getItem('uas-pti-token');
-    // this.http.post('https://umn-pti2019.herokuapp.com/api/verify', {
-    //   "token": this.token 
-    // }, {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       "Authorization": "Bearer " + localStorage.getItem('uas-pti-token')        
-    //     }
-    // }).subscribe(
-    //   (response) => {
-    //     console.log("Berhasil Verif");   
-    //   },
-    //   (error) => alert(error.error.message)
-    // )
     this.auth();
   }
 
