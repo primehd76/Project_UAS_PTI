@@ -21,12 +21,12 @@ export class ShowfavoriteComponent implements OnInit {
 
   ngOnInit() {
     this.pelayanApi.getKantinFav().subscribe(
-      result => { this.kantinFav = result; console.log(this.kantinFav);},
+      result => { this.kantinFav = result; },
       error => { console.log(error); }
     );
     this.flagss = (this.bendera.login_flag.value).toString();
     this.pelayanApi.getAllKantin().subscribe(
-      result => { this.kantin = result; console.log(this.kantin);},
+      result => { this.kantin = result; },
       error => { console.log(error); }
     );
   }
@@ -36,4 +36,5 @@ export class ShowfavoriteComponent implements OnInit {
   selectItem(index):void {
     this.selectedIdx = index;
   }
+  
 }

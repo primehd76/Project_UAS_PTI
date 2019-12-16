@@ -1,6 +1,8 @@
 <div class="container pt-3 pb-2">
     <h3 class="text-center" style="padding: 20px;">DAFTAR KANTIN</h3>
-    <button routerLink="/addkantin" routerLinkActive="active" class="btn btn-outline-primary" type="submit" style="margin-left: 500px;" *ngIf = "bendera.login_flag.value == 0">+ Kantin</button> <br><br>
+    <div class="text-center">
+        <button routerLink="/addkantin" routerLinkActive="active" class="btn btn-outline-primary text-center" type="submit"  *ngIf = "bendera.login_flag.value == 0">+ Kantin</button> <br><br>
+    </div>
     <div class="card-columns ">
         <div class="col mb-4" *ngFor="let kantin of kantin.result.kantin;let i = index" [ngClass]="{'image': selectedIdx == i }" routerLink="./{{kantin.kode}}"> 
             <div class="card">

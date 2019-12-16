@@ -17,6 +17,7 @@ import { ShowprofileComponent } from './showprofile/showprofile.component';
 import { AddkantinComponent } from './addkantin/addkantin.component';
 import { EditkantinComponent } from './editkantin/editkantin.component';
 import { ShowfavoriteComponent } from './showfavorite/showfavorite.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ShowfavoriteComponent } from './showfavorite/showfavorite.component';
     ShowprofileComponent,
     AddkantinComponent,
     EditkantinComponent,
-    ShowfavoriteComponent
+    ShowfavoriteComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,

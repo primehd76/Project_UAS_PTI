@@ -4,8 +4,7 @@
         <div class="col mb-4" *ngFor="let kantinFav of kantinFav.result;let i = index" [ngClass]="{'image': selectedIdx == i }" routerLink="../menu/{{kantinFav.id_kode_nim_isbn_favorited}}"> 
             <div class="card" (mouseenter)="selectItem(i)">
                 <div class="card-body">
-                    <h5 class="card-title">{{kantinFav.user_name}}</h5>
-                    <h5 class="card-title">{{kantinFav.id_kode_nim_isbn_favorited}}</h5>
+                    <h4 class="card-title">Kode Kantin : {{kantinFav.id_kode_nim_isbn_favorited}}</h4  >
                 </div>
             </div>
         </div>

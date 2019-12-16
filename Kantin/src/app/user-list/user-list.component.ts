@@ -13,7 +13,6 @@ export class UserListComponent implements OnInit {
   public kantin: Kantin = null;
   public flagss: string;
 
-
   constructor(
     private pelayanApi: PelayanApiService,
     public bendera: ChangeFlagService
@@ -22,7 +21,7 @@ export class UserListComponent implements OnInit {
   ngOnInit() {
     this.flagss = (this.bendera.login_flag.value).toString();
     this.pelayanApi.getAllKantin().subscribe(
-      result => { this.kantin = result; console.log(this.kantin);},
+      result => { this.kantin = result; },
       error => { console.log(error); }
     );
   }

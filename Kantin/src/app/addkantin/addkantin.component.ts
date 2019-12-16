@@ -9,18 +9,16 @@ import { Router } from '@angular/router';
 })
 export class AddkantinComponent implements OnInit {
 
- kode: string
- nama: string
- kategori: string
- foto: string
- deskripsi: string
- harga: number
- cash: string
- gopay: string
- ovo: string
- dana: string
-
-
+  kode: string
+  nama: string
+  kategori: string
+  foto: string
+  deskripsi: string
+  harga: number
+  cash: string
+  gopay: string
+  ovo: string
+  dana: string
 
   constructor(
     private http: HttpClient,
@@ -31,16 +29,6 @@ export class AddkantinComponent implements OnInit {
   }
 
   addkantin(){
-      console.log(this.kode);
-      console.log(this.nama);
-      console.log(this.kategori);
-      console.log(this.foto);
-      console.log(this.deskripsi);
-      console.log(this.harga);
-      console.log(this.cash);
-      console.log(this.dana);
-      console.log(this.ovo);
-      console.log(this.gopay);
     this.http.post('https://umn-pti2019.herokuapp.com/api/kantin',{
       "kode": this.kode,
       "nama": this.nama,
@@ -61,11 +49,11 @@ export class AddkantinComponent implements OnInit {
       }
   }).subscribe(
     (response) => {
+      alert("Berhasil Add Kantin")
       this.router.navigate(['home']);
     },
-  
-    (error) => alert(error.error.info)
-  )
-}
+    (error) => alert(error.error.message)
+    )
+  }
 
 }

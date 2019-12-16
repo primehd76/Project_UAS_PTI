@@ -1,14 +1,41 @@
-<div class="card" style="width: 18rem;">
-    <img src="{{foto}}" class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title" style="width: 18rem; text-align: center;">{{namalengkap}}</h5>
+<div class="card">
+  <img src="{{foto}}" style="width:100%">
+  <h1>{{namalengkap}}</h1>
+  <p class="title">Mahasiswa UMN</p>
+  <p>Multimedia Nusantara University</p>
+  <p><button onclick="document.getElementById('id001').style.display='block'">Detail</button></p>
+</div>
+
+<div id="id001" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id001').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="{{foto}}" alt="Avatar" class="avatar">
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Username: {{username}}</li>
-      <li class="list-group-item">Alamat Email: {{email}}</li>
-      <li class="list-group-item">Alamat: {{alamat}}</li>
-      <li class="list-group-item">Nomor Telepon: {{telepon}}</li>
-      <li class="list-group-item">Tanggal Lahir: {{tanggallahir}}</li>
-    </ul>
-  </div>
-<a routerLink="/editprofile" routerLinkActive="active"> &nbsp; Edit Profile</a>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <p>{{username}}</p>
+      
+      <label><b>Email</b></label>
+      <p>{{email}}</p>
+
+      <label><b>Alamat</b></label>
+      <p>{{alamat}}</p>
+
+      <label><b>Nomor Telepon</b></label>
+      <p>{{telepon}}</p>
+
+      <label><b>Tanggal Lahir</b></label>
+      <p>{{tanggallahir}}</p>
+        
+      <button  routerLink="/editprofile" routerLinkActive="active">Edit Profile</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById('id001');
+</script>

@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.username = (this.bendera.user_name.value).toString();
     console.log(this.username);
-    
   }
-
+  
 }

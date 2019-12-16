@@ -20,5 +20,5 @@ export class HeaderComponent implements OnInit {
     this.flagss = (this.bendera.login_flag.value).toString();
     console.log(this.flagss);
   }
-
+  
 }

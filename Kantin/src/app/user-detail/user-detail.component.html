@@ -1,12 +1,10 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <div class="container pt-3 pb-2">
-    
     <div class="card-group text-center" >
         <div class="card">
             <div>
                 <img src="{{kantin.result.foto}}" class="card-img-top" style="width: 50%;">    
             </div>
-           
             <div class="card-body">
                 <h5 class="card-title">{{kantin.result.nama}}</h5>
                 <h6 class="card-text">{{kantin.result.kategori}}</h6>
@@ -15,55 +13,45 @@
                 <div class="row row-cols-2">
                         <div class="col">
                             <label>
-                                <i class="glyphicon glyphicon-ok" *ngIf = "kantin.result.cash == 'TRUE'"></i>
-                                <i class="glyphicon glyphicon-remove" *ngIf = "kantin.result.cash == 'FALSE'"></i>
-                                <span>Cash</span>
+                                <i class="fas fa-check" *ngIf = "kantin.result.cash == 'TRUE'"></i>
+                                <i class="fas fa-times" *ngIf = "kantin.result.cash == 'FALSE'"></i>
+                                <span>&nbsp;Cash</span>
                             </label>
                         </div>
-                        <div class="col"><label>
-                                <i class="glyphicon glyphicon-ok" *ngIf = "kantin.result.gopay == 'TRUE'"></i>
-                                <i class="glyphicon glyphicon-remove" *ngIf = "kantin.result.gopay == 'FALSE'"></i>
-                                <span>Gopay</span>
+                        <div class="col">
+                            <label>
+                                <i class="fas fa-check" *ngIf = "kantin.result.gopay == 'TRUE'"></i>
+                                <i class="fas fa-times" *ngIf = "kantin.result.gopay == 'FALSE'"></i>
+                                <span>&nbsp;Gopay</span>
                             </label>
                         </div>
-                        <div class="col"><label>
-                                <i class="glyphicon glyphicon-ok" *ngIf = "kantin.result.ovo == 'TRUE'"></i>
-                                <i class="glyphicon glyphicon-remove" *ngIf = "kantin.result.ovo == 'FALSE'"></i>
-                                <span>OVO</span>
+                        <div class="col">
+                            <label>
+                                <i class="fas fa-check" *ngIf = "kantin.result.ovo == 'TRUE'"></i>
+                                <i class="fas fa-times" *ngIf = "kantin.result.ovo == 'FALSE'"></i>
+                                <span>&nbsp;OVO</span>
                             </label>
                         </div>
-                        <div class="col"><label>
-                                <i class="glyphicon glyphicon-ok" *ngIf = "kantin.result.dana == 'TRUE'"></i>
-                                <i class="glyphicon glyphicon-remove" *ngIf = "kantin.result.dana == 'FALSE'"></i>
-                                <span>Dana</span>
+                        <div class="col">
+                            <label>
+                                <i class="fas fa-check" *ngIf = "kantin.result.dana == 'TRUE'"></i>
+                                <i class="fas fa-times" *ngIf = "kantin.result.dana == 'FALSE'"></i>
+                                <span>&nbsp;Dana</span>
                             </label>
                         </div>
                       </div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <button class="btn btn-outline-success" type="submit" style="margin-left: 500px;margin-right: 500px;" *ngIf = "benderas.login_flag.value == 0" (click)="favorite()">
-                <label for="id-of-input" class="custom-checkbox">
-                    <i class="glyphicon glyphicon-star"></i>
-                    <span>Favorite</span>
-                </label>
+                <br/><br/><br/><br/>
+                <button class="btn btn-outline-success" type="submit" *ngIf = "benderas.login_flag.value == 0" (click)="favorite()">
+                    <label for="id-of-input" class="custom-checkbox">
+                        <i class="fas fa-star"></i>
+                        <span>&nbsp;Favorite</span>
+                    </label>
                 </button>
                 <br><br>
-                <button class="btn btn-outline-danger" type="submit" style="margin-left: 500px;margin-right: 500px;" *ngIf = "benderas.login_flag.value == 0" (click)="unfavorite()">
-                        <span>Unfavorite</span>
-                    </button>
-            <br>
-            <br>
-                <button routerLink="/editkantin" routerLinkActive="active" class="btn btn-outline-primary" type="submit" style="margin-left: 500px;margin-right: 500px;" *ngIf = "benderas.login_flag.value == 0">Edit Kantin</button> <br><br>
+                <button class="btn btn-outline-danger" type="submit"  *ngIf = "benderas.login_flag.value == 0" (click)="unfavorite()">Unfavorite</button>
+                <br><br>
+                <button routerLink="/editkantin" routerLinkActive="active" class="btn btn-outline-primary" type="submit" *ngIf = "benderas.login_flag.value == 0">Edit Kantin</button> <br><br>
             </div>
-            
-            <!-- <div class="card-footer">
-                <small class="text-muted">{{kantin.result.cash}}</small>
-                <small class="text-muted">{{kantin.result.gopay}}</small>
-                <small class="text-muted">{{kantin.result.ovo}}</small>
-                <small class="text-muted">{{kantin.result.dana}}</small>
-            </div> -->
         </div>
       </div>
 </div>

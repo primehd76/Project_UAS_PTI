@@ -28,7 +28,5 @@ export interface KantinDetail{
 export interface KantinFavorite{
     info: string;
     result:{
-
     };
-
 }

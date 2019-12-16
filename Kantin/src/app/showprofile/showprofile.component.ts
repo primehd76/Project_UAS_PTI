@@ -25,7 +25,6 @@ export class ShowprofileComponent implements OnInit {
   ) { }
 
   auth(){
-    console.log(localStorage.getItem("uas-pti-token"));
     this.http.post('https://umn-pti2019.herokuapp.com/api/verify',{
       "token": localStorage.getItem("uas-pti-token")
     },{
@@ -37,8 +36,6 @@ export class ShowprofileComponent implements OnInit {
     }).subscribe(
       (response) => {
         if(response['result'] != null){
-          console.log(response['info']);
-          console.log(response['result']);
           localStorage.setItem('user.name',response['result'].user.user_name);
           localStorage.setItem('telepon',response['result'].user.telepon);
           localStorage.setItem('alamat',response['result'].user.alamat);
@@ -46,7 +43,6 @@ export class ShowprofileComponent implements OnInit {
           localStorage.setItem('nama.lengkap',response['result'].user.nama_lengkap);
           localStorage.setItem('tanggal.lahir',response['result'].user.tanggal_lahir);
           localStorage.setItem('foto',response['result'].user.foto);
-          console.log(localStorage);
           this.username = localStorage.getItem('user.name');
           this.telepon = localStorage.getItem('telepon');
           this.alamat = localStorage.getItem('alamat');
@@ -56,11 +52,12 @@ export class ShowprofileComponent implements OnInit {
           this.foto = localStorage.getItem('foto'); 
         }
       },
-      (error) => alert(error.error.message)
+      (error) => { console.log(error); }
     )
   }
 
   ngOnInit() {
-      this.auth();
-   }
+    this.auth();
+  }
+
 }

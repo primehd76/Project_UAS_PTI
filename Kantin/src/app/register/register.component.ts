@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(localStorage);
   }
   register(){
     this.http.post('https://umn-pti2019.herokuapp.com/api/register',{
@@ -45,11 +44,12 @@ export class RegisterComponent implements OnInit {
       (response) => {
         if(response['token'] != null){
           localStorage.setItem('uas-pti-token', response['token']);
-          console.log(localStorage);
+          alert("Anda Berhasil Register!");
           this.router.navigate(['home']);
         }
       },
       (error) => alert(error.error.message)
       )
   }
+
 }

@@ -30,7 +30,7 @@ export class UserDetailComponent implements OnInit {
     localStorage.setItem('kode.kantin', id);
     console.log(localStorage.getItem('kode.kantin'));
     this.pelayanApi.getKantinById(id).subscribe(
-      result => { this.kantin = result; console.log(this.kantin);},
+      result => { this.kantin = result; },
       error => { console.log(error); }
     );
   }
@@ -50,8 +50,7 @@ export class UserDetailComponent implements OnInit {
       (response) => {
         alert("Kantin Favorited");
       },
-    
-      (error) => alert(error.error.info)
+      (error) => alert(error.error.message)
     )
   }
 
@@ -70,8 +69,7 @@ export class UserDetailComponent implements OnInit {
       (response) => {
         alert("Kantin UnFavorited");
       },
-    
-      (error) => alert(error.error.info)
+      (error) => alert(error.error.message)
     )
   }
 

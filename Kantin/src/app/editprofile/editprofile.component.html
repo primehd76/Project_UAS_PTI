@@ -1,5 +1,5 @@
-<div class="container pt-3 pb-2" >
-    <form class="form-group col-md-6">
+<div class="container pt-3 pb-2">
+    <form class="form-group col-md-4">
         <div class="form-group">
             <label>Nama Lengkap</label>
             <input type="text" class="form-control" name="nama_lengkap" [(ngModel)]="nama_lengkap">
@@ -20,6 +20,6 @@
             <label>Password</label>
             <input type="password" class="form-control" name="password" [(ngModel)]="password">
         </div>
-        <input type="submit" value="Update" (click)="update()" class="btn btn-primary">
+        <input type="submit" value="Update" (click)="update(); auth();" class="btn btn-primary">
     </form>
 </div>

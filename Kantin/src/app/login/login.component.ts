@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
   }
 
   auth(){
-    console.log(localStorage.getItem("uas-pti-token"));
     this.http.post('https://umn-pti2019.herokuapp.com/api/verify',{
       "token": localStorage.getItem("uas-pti-token")
     },{
@@ -44,8 +43,6 @@ export class LoginComponent implements OnInit {
     }).subscribe(
       (response) => {
         if(response['result'] != null){
-          console.log(response['info']);
-          console.log(response['result']);
           localStorage.setItem('user.name',response['result'].user.user_name);
           localStorage.setItem('telepon',response['result'].user.telepon);
           localStorage.setItem('alamat',response['result'].user.alamat);
@@ -53,7 +50,6 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('nama.lengkap',response['result'].user.nama_lengkap);
           localStorage.setItem('tanggal.lahir',response['result'].user.tanggal_lahir);
           localStorage.setItem('foto',response['result'].user.foto);
-          console.log(localStorage);
         }
       },
       (error) => alert(error.error.message)
@@ -69,12 +65,10 @@ export class LoginComponent implements OnInit {
       (response) => {
         if(response['token'] != null){
           localStorage.setItem('uas-pti-token', response['token']);
-          console.log(localStorage);
           this.flagsss = '0';
           this.flags.changeFlag(this.flagsss, this.username);
           console.log(this.flagsss);
           this.auth();
-          console.log(localStorage);
           this.router.navigate(['home']);
         }
       },

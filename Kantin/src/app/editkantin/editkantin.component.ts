@@ -8,17 +8,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./editkantin.component.css']
 })
 export class EditkantinComponent implements OnInit {
-
   
- nama: string
- kategori: string
- foto: string
- deskripsi: string
- harga: number
- cash: string
- gopay: string
- ovo: string
- dana: string
+  nama: string
+  kategori: string
+  foto: string
+  deskripsi: string
+  harga: number
+  cash: string
+  gopay: string
+  ovo: string
+  dana: string
   
   constructor(
     public http: HttpClient,
@@ -27,14 +26,11 @@ export class EditkantinComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // var id= localStorage.getItem('kode.kantin'); 
-    // console.log(id);
   }
 
   updatekantin(){
     var id= localStorage.getItem('kode.kantin'); 
     console.log(id);
-    console.log("put");
     this.http.put('https://umn-pti2019.herokuapp.com/api/kantin/'+id, {
       "nama": this.nama,
       "kategori": this.kategori,
@@ -54,10 +50,10 @@ export class EditkantinComponent implements OnInit {
         }
     }).subscribe(
       (response) => {
+        alert("Berhasil Edit Kantin");
         this.router.navigate(['home']);
       },
-    
-      (error) => alert(error.error.info)
+      (error) => alert(error.error.message)
     )
   }
 

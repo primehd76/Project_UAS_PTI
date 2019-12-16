@@ -10,7 +10,6 @@ import { SHA512 } from 'crypto-js';
 })
 export class EditprofileComponent implements OnInit {
 
-
   nama_lengkap: string;
   alamat: string;
   tanggal_lahir: string;
@@ -23,30 +22,50 @@ export class EditprofileComponent implements OnInit {
     public router: Router,
   ) { }
 
-  ngOnInit() {
-
-    console.log("validasi token");
-    this.token = localStorage.getItem('uas-pti-token');
-    console.log(this.token);
-    this.http.post('https://umn-pti2019.herokuapp.com/api/verify', {
-      "token": this.token 
-    }, {
+  auth(){
+    this.http.post('https://umn-pti2019.herokuapp.com/api/verify',{
+      "token": localStorage.getItem("uas-pti-token")
+    },{
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer " + localStorage.getItem('uas-pti-token')        
+          "x-access-token": localStorage.getItem("uas-pti-token"),
+          "Authorization": "Bearer "+localStorage.getItem("uas-pti-token")
         }
     }).subscribe(
       (response) => {
-        console.log("Berhasil Verif AHADADSDASJJGG");   
+        if(response['result'] != null){
+          localStorage.setItem('user.name',response['result'].user.user_name);
+          localStorage.setItem('telepon',response['result'].user.telepon);
+          localStorage.setItem('alamat',response['result'].user.alamat);
+          localStorage.setItem('email',response['result'].user.email);
+          localStorage.setItem('nama.lengkap',response['result'].user.nama_lengkap);
+          localStorage.setItem('tanggal.lahir',response['result'].user.tanggal_lahir);
+          localStorage.setItem('foto',response['result'].user.foto);
+        }
       },
-    
-      (error) => alert(error.error.info)
+      (error) => alert(error.error.message)
     )
   }
 
+  ngOnInit() {
+    // this.token = localStorage.getItem('uas-pti-token');
+    // this.http.post('https://umn-pti2019.herokuapp.com/api/verify', {
+    //   "token": this.token 
+    // }, {
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       "Authorization": "Bearer " + localStorage.getItem('uas-pti-token')        
+    //     }
+    // }).subscribe(
+    //   (response) => {
+    //     console.log("Berhasil Verif");   
+    //   },
+    //   (error) => alert(error.error.message)
+    // )
+    this.auth();
+  }
+
   update(){
-    console.log("put");
-    console.log(localStorage);
     this.http.put('https://umn-pti2019.herokuapp.com/api/update', {
       "nama_lengkap": this.nama_lengkap,
       "alamat": this.alamat,
@@ -62,10 +81,10 @@ export class EditprofileComponent implements OnInit {
         }
     }).subscribe(
       (response) => {
+        alert("Berhasil Edit Profile");
         this.router.navigate(['home']);
       },
-    
-      (error) => alert(error.error.info)
+      (error) => alert(error.error.message)
     )
   }
 

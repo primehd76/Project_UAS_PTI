@@ -10,6 +10,7 @@ import { ShowprofileComponent } from './showprofile/showprofile.component';
 import { AddkantinComponent } from './addkantin/addkantin.component';
 import { EditkantinComponent } from './editkantin/editkantin.component';
 import { ShowfavoriteComponent } from './showfavorite/showfavorite.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,10 @@ const routes: Routes = [
   { 
     path: 'showfavorite',
     component: ShowfavoriteComponent
+  },
+  {
+    path: 'aboutus',
+    component: AboutusComponent
   }
 ];
 
